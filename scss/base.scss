@@ -1,0 +1,21 @@
+@use "navbar";
+@use "menus";
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+
+body {
+    background-color: rgb(26, 25, 29);
+
+    padding: 0;
+    margin: 0;
+
+    color: #fff;
+}
+
+main {
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
