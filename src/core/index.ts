@@ -20,7 +20,11 @@ function createWindow(): void {
     // Maximize window
     mainWindow.maximize();
 
-    mainWindow.loadFile(path.join(__dirname, "../../res/index.html"));
+    if (process.env.ENV === "dev") {
+        mainWindow.loadURL("http://localhost:9101");
+    } else {
+        mainWindow.loadFile(path.join(__dirname, "../../res/index.html"));
+    }
 }
 
 // This method will be called when Electron has finished

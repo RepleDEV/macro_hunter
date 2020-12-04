@@ -1,5 +1,8 @@
 import $ from "jquery";
 
+// Styles
+import "../../scss/base.scss";
+
 $(() => {
     showMenu("layout-select")
     $("button#create").on("click", () => {

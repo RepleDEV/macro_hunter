@@ -22,7 +22,7 @@ module.exports = {
             },
             {
                 test: /\.ts$/,
-                use: ["style-loader", "css-loader", "sass-loader"]
+                use: ["ts-loader"]
             }
         ],
     },
@@ -31,7 +31,7 @@ module.exports = {
         historyApiFallback: true,
         compress: true,
         hot: true,
-        port: 4101,
+        port: 9101,
         publicPath: "/",
     },
     output: {
