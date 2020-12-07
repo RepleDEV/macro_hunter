@@ -26,8 +26,8 @@ module.exports = {
             },
             {
                 test: /\.ts$/,
-                use: ["ts-loader"]
-            }
+                use: ["ts-loader"],
+            },
         ],
     },
     devServer: {
@@ -42,7 +42,7 @@ module.exports = {
             filename: "index.html",
             template: "res/index.html",
             inject: true,
-            cache: true
-        })
+            cache: true,
+        }),
     ],
 };

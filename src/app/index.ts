@@ -6,11 +6,11 @@ import * as menus from "./menus";
 import "../../scss/base.scss";
 
 $(() => {
-    menus.show("layout-select")
+    menus.show("layout-select");
     $("button#create").on("click", () => {
         console.log("Click");
     });
     $("button#import").on("click", () => {
-        // 
+        //
     });
 });
