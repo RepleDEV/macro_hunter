@@ -7,11 +7,15 @@ const rootPath = path.resolve(__dirname);
 const outputPath = path.join(rootPath, "./dist/app/");
 
 module.exports = {
+    entry: path.join(rootPath, "./src/app/index.ts"),
+    output: {
+        filename: "index.js",
+        path: outputPath,
+    },
     resolve: {
         extensions: [".ts", ".js"],
         mainFields: ["main", "module", "browser"],
     },
-    entry: path.join(rootPath, "./src/app/index.ts"),
     target: "electron-renderer",
     devtool: "source-map",
     module: {
@@ -28,15 +32,10 @@ module.exports = {
     },
     devServer: {
         contentBase: outputPath,
-        historyApiFallback: true,
         compress: true,
         hot: true,
         port: 9101,
         publicPath: "/",
-    },
-    output: {
-        filename: "index.js",
-        path: outputPath,
     },
     plugins: [
         new HTMLWebpackPlugin({
@@ -45,5 +44,5 @@ module.exports = {
             inject: true,
             cache: true
         })
-    ]
+    ],
 };

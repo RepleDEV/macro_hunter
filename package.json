@@ -5,10 +5,11 @@
     "main": "dist/core/index.js",
     "scripts": {
         "dev": "npm-run-all -p dev:renderer dev:electron",
-        "dev:renderer": "cross-env ENV=dev webpack-dev-server --mode development",
+        "dev:renderer": "webpack-dev-server --mode development",
         "dev:electron": "wait-on http-get://localhost:9101/ && tsc && cross-env ENV=dev electron .",
-        "build:renderer": "webpack --mode production",
-        "build:electron": "tsc",
+        "pack": "npm-run-all -p pack:renderer pack:electron",
+        "pack:renderer": "webpack --mode production",
+        "pack:electron": "tsc",
         "prettier": "prettier --write .",
         "lint": "eslint"
     },

@@ -1,6 +1,9 @@
 import { app, BrowserWindow } from "electron";
 import * as path from "path";
 
+// Constants
+const DEVELOPMENT = "dev";
+
 let mainWindow: BrowserWindow | null = null;
 
 function createWindow(): void {
@@ -20,10 +23,10 @@ function createWindow(): void {
     // Maximize window
     mainWindow.maximize();
 
-    if (process.env.ENV === "dev") {
+    if (process.env.ENV === DEVELOPMENT) {
         mainWindow.loadURL("http://localhost:9101");
     } else {
-        mainWindow.loadFile(path.join(__dirname, "../../res/index.html"));
+        mainWindow.loadFile(path.join(__dirname, "../../dist/app/index.html"));
     }
 }
 
