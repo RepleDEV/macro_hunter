@@ -1,16 +1,15 @@
 @import "variables";
 
-nav {
+nav.navbar {
     height: 100vh;
     width: $nav_width;
 
     background-color: $nav_bg_color;
 
-    z-index: 1;
     left: 0;
     position: fixed;
 
-    // box-shadow: 2px 0px 10px 2px $nav_shadow_color;
+    border-right: 2px solid $color_tertiary;
 
     ul {
         list-style: none;
@@ -36,10 +35,8 @@ nav {
 
     li svg {
         display: block;
-        margin: 10px auto;
 
-        fill: #fff;
-        color: #fff;
+        margin: 10px auto;
 
         opacity: 0.8;
 

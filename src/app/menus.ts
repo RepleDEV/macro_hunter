@@ -1,24 +1,24 @@
 import $ from "jquery";
 
-type Menus = "layout-edit";
-const menus: Menus[] = ["layout-edit"];
+type Menus = "layout-configure" | "layout-select";
+const menus: Menus[] = ["layout-configure", "layout-select"];
 
-function _switch(menu: Menus): void {
-    for (let i = 0; i < menus.length; i++) {
-        if (!$(`.menu.${menus[i]}`).hasClass("hidden")) {
-            hide(menus[i]);
-            break;
+class Menu {
+    static switch(menu: Menus): void {
+        for (let i = 0; i < menus.length; i++) {
+            if (!$(`.menu.${menus[i]}`).hasClass("hidden")) {
+                this.hide(menus[i]);
+                break;
+            }
         }
+        this.show(menu);
     }
-    show(menu);
+    static hide(menu: Menus): void {
+        $(`.menu.${menu}`).addClass("hidden");
+    }
+    static show (menu: Menus): void {
+        $(`.menu.${menu}`).removeClass("hidden");
+    }
 }
 
-// Animations will be added later on
-function hide(menu: Menus): void {
-    $(`.menu.${menu}`).addClass("hidden");
-}
-function show(menu: Menus): void {
-    $(`.menu.${menu}`).removeClass("hidden");
-}
-
-export { _switch as switch, hide, show };
+export { Menu };

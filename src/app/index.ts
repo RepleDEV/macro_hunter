@@ -1,16 +1,24 @@
 import $ from "jquery";
 
-import * as menus from "./menus";
+import { Menu } from "./menus";
 
 // Styles
 import "../../scss/base.scss";
 
 $(() => {
-    menus.show("layout-edit");
+    Menu.show("layout-configure");
     $("button#create").on("click", () => {
-        menus.switch("layout-edit");
+        Menu.switch("layout-configure");
     });
     $("button#import").on("click", () => {
-        menus.switch("layout-edit");
+        Menu.switch("layout-configure");
     });
+});
+
+$(".menu.layout-configure .page.no-layouts #layout_create").on("click", () => {
+    console.log("click");
+});
+
+$(".menu.layout-configure .page.no-layouts #layout_import").on("click", () => {
+    console.log("clickag");
 });
