@@ -4,3 +4,4 @@ LICENSE
 .*
 node_modules/
 dist/
+.vscode/
