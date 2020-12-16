@@ -16,7 +16,7 @@ class Menu {
     static hide(menu: Menus): void {
         $(`.menu.${menu}`).addClass("hidden");
     }
-    static show (menu: Menus): void {
+    static show(menu: Menus): void {
         $(`.menu.${menu}`).removeClass("hidden");
     }
 }
