@@ -44,6 +44,12 @@ main {
     display: none;
 }
 
+.transparent {
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
 svg {
     fill: $color_text;
 }
