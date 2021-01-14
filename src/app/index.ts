@@ -1,22 +1,17 @@
 import $ from "jquery";
 import { promises as fs } from "fs";
 import * as path from "path";
+import * as listeners from "./listeners";
 
 import { Menu, Menus } from "./menus";
 
 // Styles
 import "../../scss/base.scss";
 
-$(".menu.layout-configure .page.no-layouts #layout_create").on("click", () => {
-    Menus.layout_configure.show_page("layout-create");
-});
-
-$(".menu.layout-configure .page.no-layouts #layout_import").on("click", () => {
-    Menus.layout_configure.show_page("layout-import");
-});
-
 $(async () => {
     await load_app_elements();
+
+    listeners.init();
 
     Menu.show("layout-configure");
 

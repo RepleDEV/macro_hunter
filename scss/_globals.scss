@@ -11,3 +11,14 @@ $nav_svg_size: 2.2rem;
 
 // Layout editor properties
 $key_size: 4.5vw;
+
+@mixin default_button {
+    text-decoration: none;
+
+    transition: background-color 120ms ease-in-out;
+
+    user-select: none;
+
+    font-family: inherit;
+    font-weight: inherit;
+}

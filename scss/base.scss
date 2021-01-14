@@ -2,7 +2,7 @@
 @use "menus";
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
-@import "variables";
+@import "globals";
 
 body {
     background-color: $color_primary;
@@ -52,4 +52,9 @@ main {
 
 svg {
     fill: $color_text;
+}
+
+button,
+a {
+    @include default_button;    
 }
