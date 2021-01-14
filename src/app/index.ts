@@ -31,14 +31,19 @@ async function load_app_elements(): Promise<void> {
 }
 
 async function load_navbar(): Promise<void> {
-    const contents = await fs.readFile(path.join(views_path, "navbar.html"), { encoding:"utf-8" });
+    const contents = await fs.readFile(path.join(views_path, "navbar.html"), {
+        encoding: "utf-8",
+    });
     $("div#navbar_container").html(contents);
 }
 async function load_menus(): Promise<void> {
     const dir_contents = await fs.readdir(path.join(views_path, "./menus"));
-    for (let i = 0;i < dir_contents.length;i++) {
+    for (let i = 0; i < dir_contents.length; i++) {
         const filename = dir_contents[i];
-        const contents = await fs.readFile(path.join(views_path, `./menus/${filename}`), { encoding: "utf-8" });
+        const contents = await fs.readFile(
+            path.join(views_path, `./menus/${filename}`),
+            { encoding: "utf-8" }
+        );
         $("body>main").html($("body>main").html() + contents);
     }
 }
