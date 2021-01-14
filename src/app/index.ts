@@ -28,6 +28,7 @@ const views_path = path.resolve("res/views/");
 async function load_app_elements(): Promise<void> {
     await load_navbar();
     await load_menus();
+    await load_icons();
 }
 
 async function load_navbar(): Promise<void> {
@@ -44,6 +45,26 @@ async function load_menus(): Promise<void> {
             path.join(views_path, `./menus/${filename}`),
             { encoding: "utf-8" }
         );
-        $("body>main").html($("body>main").html() + contents);
+        $("body>main").append(contents);
+    }
+}
+
+async function load_icons(): Promise<void> {
+    const rootPath = path.resolve("res/assets/icons/");
+
+    const icons: string[] = [];
+
+    $("svg").each((i, e) => {
+        const className = e.getAttribute("class");
+        if (className) {
+            icons.push(className);
+        }
+    });
+    
+    for (let i = 0;i < icons.length;i++) {
+        const icon = icons[i];
+        const filePath = path.join(rootPath, `${icon}.svg`);
+        const fileContents = await fs.readFile(filePath, { encoding: "utf-8" });
+        $(`svg.${icon}`).replaceWith(fileContents);
     }
 }
