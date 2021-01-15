@@ -47,6 +47,14 @@ async function load_menus(): Promise<void> {
         );
         $("body>main").append(contents);
     }
+    
+    await load_keyboard_layout();
+}
+
+async function load_keyboard_layout(): Promise<void> {
+    const contents = await fs.readFile(path.join(views_path, "keyboard-template.html"), { encoding: "utf-8" });
+
+    $(".page.layout-create>.keyboard-container").replaceWith(contents);
 }
 
 async function load_icons(): Promise<void> {
