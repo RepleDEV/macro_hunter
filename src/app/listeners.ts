@@ -17,14 +17,17 @@ function init(): void {
         }
     );
 
-    $(".page.layout-create .keyboard-layout-container .keyboard_key").on("click", (e) => {
-        Overlay.show(".page.layout-create>.key-config-container");
-        const key = $(e.target).clone();
+    $(".page.layout-create .keyboard-layout-container .keyboard_key").on(
+        "click",
+        (e) => {
+            Overlay.show(".page.layout-create>.key-config-container");
+            const key = $(e.target).clone();
 
-        console.log(key);
+            console.log(key);
 
-        $(".overlay-container .key-preview>.preview-container").append(key);
-    });
+            $(".overlay-container .key-preview>.preview-container").append(key);
+        }
+    );
 }
 
 export { init };

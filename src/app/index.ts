@@ -47,12 +47,15 @@ async function load_menus(): Promise<void> {
         );
         $("body>main").append(contents);
     }
-    
+
     await load_keyboard_layout();
 }
 
 async function load_keyboard_layout(): Promise<void> {
-    const contents = await fs.readFile(path.join(views_path, "keyboard-template.html"), { encoding: "utf-8" });
+    const contents = await fs.readFile(
+        path.join(views_path, "keyboard-template.html"),
+        { encoding: "utf-8" }
+    );
 
     $(".page.layout-create>.keyboard-container").replaceWith(contents);
 }
@@ -68,8 +71,8 @@ async function load_icons(): Promise<void> {
             icons.push(className);
         }
     });
-    
-    for (let i = 0;i < icons.length;i++) {
+
+    for (let i = 0; i < icons.length; i++) {
         const icon = icons[i];
         const filePath = path.join(rootPath, `${icon}.svg`);
         const fileContents = await fs.readFile(filePath, { encoding: "utf-8" });
