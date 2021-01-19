@@ -1,4 +1,54 @@
-@import "../globals";
+.key-config-container {
+    width: 40rem;
+    height: 32rem;
+
+    background-color: #FFF;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    text-align: center;
+
+    border: 2px solid $color_tertiary;
+    border-radius: 1.2rem;
+
+    background-color: $color_secondary;
+
+    & > div {
+        height: 100%;
+        width: 50%;
+
+        margin:0;
+    }
+    .key-preview {
+        float: left;
+
+        .preview-container {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+            .keyboard_key {
+                width: $key_size * 2;
+                height: $key_size * 2;
+
+                line-height: $key_size * 2;
+
+                margin: 0 auto;
+
+                .text-container {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+    .key-config {
+        float: right;
+    }
+}
 
 .layout-configure {
     .page.layout-create #create_layout_button {
@@ -62,77 +112,7 @@
             caret-color: $color_text;
         }
     }
-
-    .page.layout-create > .keyboard-layout-container {
-        margin-top: 4rem;
-
-        width: 100%;
-
-        .row {
-            margin: 0 auto;
-
-            width: fit-content;
-
-            display: flex;
-            flex-direction: row;
-
-            .key {
-                width: $key_size;
-                height: $key_size;
-
-                background-color: $color_secondary;
-
-                margin: 0.4rem;
-
-                border: 3px solid #ddd;
-                border-radius: 1.125vw;
-
-                transition: transform 100ms ease-in-out;
-
-                &:hover {
-                    cursor: pointer;
-                    transform: scale(1.05);
-                }
-            }
-
-            .key#backspace {
-                width: $key_size * 2;
-            }
-            .key#tab,
-            .key#backslash,
-            .key#control_left,
-            .key#control_right {
-                width: $key_size * 1.5;
-            }
-            .key#capslock {
-                width: $key_size * 1.8;
-            }
-            .key#enter,
-            .key#shift_left {
-                width: $key_size * 2.5;
-            }
-            .key#shift_right {
-                width: $key_size * 3.1;
-            }
-            .key#alt_left,
-            .key#alt_right {
-                width: $key_size * 1.8;
-            }
-            .key#space {
-                width: $key_size * 7.2;
-            }
-
-            .key > .text-container {
-                min-height: $key_size;
-                display: inline-flex;
-                align-items: center;
-
-                font-size: 1.2rem;
-                text-transform: capitalize;
-            }
-        }
-    }
-
+    
     .page.no-layouts > .button_container {
         display: flex;
         flex-direction: column;

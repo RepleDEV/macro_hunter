@@ -1,14 +1,13 @@
 import $ from "jquery";
 
-type Menus = "layout-configure";
-const menus: Menus[] = ["layout-configure"];
+type MenuTypes = "layout-configure";
 
 class Menu {
-    static hide(menu: Menus): void {
+    static hide(menu: MenuTypes): void {
         this.hide_active();
         hide_element(`.menu.${menu}`);
     }
-    static show(menu: Menus): void {
+    static show(menu: MenuTypes): void {
         this.hide_active();
         show_element(`.menu.${menu}`);
     }
@@ -53,4 +52,4 @@ const Menus = {
     },
 };
 
-export { Menu, Menus };
+export { Menu, Menus, show_element, hide_element };

@@ -1,8 +1,8 @@
-@use "navbar";
-@use "menus";
-
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 @import "globals";
+@import "navbar";
+@import "menus";
+@import "keyboard";
 
 body {
     background-color: $color_primary;
@@ -13,6 +13,12 @@ body {
     color: $color_text;
 
     outline: none;
+
+    transition: background-color 120ms ease-in-out;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.2vw;
 }
 
 main {
@@ -44,4 +50,19 @@ svg {
 button,
 a {
     @include default_button;
+}
+
+div.overlay-container {
+    background-color: rgba(0,0,0,0.5);
+
+    height: 100%;
+    width: 100%;
+
+    position: fixed;
+    z-index: 1;
+
+    top: 0;
+    left: $nav_width;
+
+    backdrop-filter: blur(20px);
 }

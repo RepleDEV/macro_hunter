@@ -1,0 +1,84 @@
+.keyboard-layout-container {
+    margin-top: 4rem;
+
+    width: 100%;
+
+    .row {
+        margin: 0 auto;
+
+        width: fit-content;
+
+        display: flex;
+        flex-direction: row;
+
+        .keyboard_key {
+            margin: 0.4rem;
+
+            transition: transform 100ms ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+            }
+
+            &:active {
+                transform: scale(1.02);
+            }
+        }
+    }
+}
+
+.keyboard_key {
+    width: $key_size;
+    height: $key_size;
+
+    background-color: $color_secondary;
+
+    border: 3px solid #ddd;
+    border-radius: 1.125vw;
+
+    line-height: $key_size;
+
+    * {
+        pointer-events: none;
+        user-select: none;
+    }
+}
+
+.keyboard_key#backspace {
+    width: $key_size * 2;
+}
+.keyboard_key#tab,
+.keyboard_key#backslash,
+.keyboard_key#control_left,
+.keyboard_key#control_right {
+    width: $key_size * 1.5;
+}
+.keyboard_key#capslock {
+    width: $key_size * 1.8;
+}
+.keyboard_key#enter,
+.keyboard_key#shift_left {
+    width: $key_size * 2.5;
+}
+.keyboard_key#shift_right {
+    width: $key_size * 3.1;
+}
+.keyboard_key#alt_left,
+.keyboard_key#alt_right {
+    width: $key_size * 1.8;
+}
+.keyboard_key#space {
+    width: $key_size * 7.2;
+}
+
+.keyboard_key > .text-container {
+    display: inline-block;
+    line-height: normal;
+
+    text-align: center;
+    vertical-align: middle;
+
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
